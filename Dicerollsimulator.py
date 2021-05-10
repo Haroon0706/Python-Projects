@@ -1,6 +1,6 @@
 # Creating a simple dice rolling generator using the random module 
 
-# instead of importing the entire module we will import the randint method specifically
+# Instead of importing the entire module we will import the randint method specifically
 
 from random import randint
 
@@ -15,4 +15,5 @@ while quest[0].upper() == "Y":
     quest = input("Would you like to roll again? (Y/N)")
 
 else:
-    print("Thank you for rolling with us!")
+    if quest[0].upper() == "N":
+        print("Thank you for rolling with us!")
