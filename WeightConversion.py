@@ -1,6 +1,6 @@
-#Building a simple weight converter from Kgs to Lbs and vice versa using if statements
+# Building a simple weight converter from Kgs to Lbs and vice versa using if statements
 
-#Write code as a function as a means of allowing someone to run the program multiple times
+# Write code as a function as a means of allowing someone to run the program multiple times
 
 def main():
     weight = float(input ("Weight: "))
