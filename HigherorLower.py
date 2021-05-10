@@ -20,3 +20,61 @@ for rank in ranks:
 # Using the random module we can shuffle the deck
 
 random.shuffle(deck)
+
+score = 0 
+
+# Drawing our initial card out of the deck
+
+card1 = deck.pop(0)
+
+# Using a while loop we can build the bulk of the game in terms of drawing a new card over and over until the player loses
+
+while True:
+    os.system("cls")
+    print("Your score so far is", score)
+    print("\nThe current card is", card1[0])
+
+    # This inner while loop is used to avoid the program not knowing what to do if there is an invalid input
+    while True:
+        choice = input("\nHigher or lower?")
+        if len(choice) > 0:
+            if choice[0].lower() in ["h", "l"]:
+                break
+
+    card2 = deck.pop(0)
+    print("The next card is", card2[0])
+    time.sleep(1)
+
+    if choice[0].lower() == "h" and card2[1] > card1[1]:
+        print("Correct!")
+        score += 1
+        time.sleep(1)
+
+    if choice[0].lower() == "h" and card2[1] < card1[1]:
+        print("Wrong!")
+        time.sleep(1)
+        break
+
+    if choice[0].lower() == "l" and card2[1] < card1[1]:
+        print("Correct!")
+        score += 1
+        time.sleep(1)
+
+    if choice[0].lower() == "l" and card2[1] > card1[1]:
+        print("Wrong!")
+        time.sleep(1)
+        break
+    if card2[1] == card1[1]:
+        print("Draw")
+
+# card2 will become the new card1 in the above loop and as the game continues the next card will take its place
+
+    card1 = card2
+
+# Final overview of game results    
+
+os.system("cls")
+print("Game over!")
+print("Your final score is", score)
+time.sleep(4)
+os.system("cls")
